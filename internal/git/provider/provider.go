@@ -14,7 +14,7 @@ type ProviderType string
 
 const (
 	ProviderGitHub    = ProviderType(giturlapis.ProviderGitHub)
-	ProviderGitlab    = ProviderType(giturlapis.ProviderGitLab)
+	ProviderGitLab    = ProviderType(giturlapis.ProviderGitLab)
 	ProviderBitbucket = ProviderType(giturlapis.ProviderBitBucket)
 	ProviderAzure     = ProviderType(giturlapis.ProviderAzure)
 )

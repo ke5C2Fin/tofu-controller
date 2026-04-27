@@ -84,7 +84,7 @@ func (p *GitLabProvider) AddCommentToPullRequest(ctx context.Context, pr PullReq
 	}, nil
 }
 
-func (p *GitlabProvider) GetLastComments(ctx context.Context, pr PullRequest, since time.Time) ([]*Comment, error) {
+func (p *GitLabProvider) GetLastComments(ctx context.Context, pr PullRequest, since time.Time) ([]*Comment, error) {
 	// TODO make sure that we get the last comment
 	comments, _, err := p.client.Issues.ListComments(ctx, pr.Repository.String(), pr.Number, &scm.ListOptions{})
 	if err != nil {
@@ -113,7 +113,7 @@ func (p *GitlabProvider) GetLastComments(ctx context.Context, pr PullRequest, si
 	return commentsSince, nil
 }
 
-func (p *GitlabProvider) UpdateCommentOfPullRequest(ctx context.Context, pr PullRequest, commentID int, body []byte) error {
+func (p *GitLabProvider) UpdateCommentOfPullRequest(ctx context.Context, pr PullRequest, commentID int, body []byte) error {
 	// tf-controller plan output:
 	comment, _, err := p.client.Issues.FindComment(ctx, pr.Repository.String(), pr.Number, commentID)
 
